@@ -1,0 +1,22 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{markdowninput}[2022/01/30 v0.01 markdowninput for LuaLaTeX]
+
+\RequirePackage{lettrine}
+
+\directlua{require("markdowninput.lua")}
+
+\newcommand{\markdownInput}[1]{%
+\directlua{markdownInput("\luaescapestring{#1}")}%
+}
+
+\newcommand{\mdiChapter}[1]{%
+\chapter{#1}%
+}
+
+\newcommand{\mdiSection}[1]{%
+\section{#1}%
+}
+
+\newcommand{\mdiSubsection}[1]{%
+\subsection{#1}%
+}
